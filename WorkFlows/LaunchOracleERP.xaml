@@ -5,7 +5,7 @@
   <this:LaunchOracleERP.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:LaunchOracleERP.in_Config>
-  <sap:VirtualizedContainerService.HintSize>1150,1204.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1797.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -70,7 +70,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Launch Edge Browser&#xA;2. Retry Launch Browser upon Launch Failure&#xA;" DisplayName="Launch OracleERP " sap:VirtualizedContainerService.HintSize="526,1140" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Launch Edge Browser&#xA;2. Retry Launch Browser upon Launch Failure&#xA;" DisplayName="Launch OracleERP " sap:VirtualizedContainerService.HintSize="526,1732.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="blnIEModeDisplayed" />
     </Sequence.Variables>
@@ -81,13 +81,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Init - LaunchOracleERP" sap:VirtualizedContainerService.HintSize="484,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_Config(&quot;Log_LaunchOracleERP&quot;).ToString]" />
-    <ui:RetryScope DisplayName="Retry - Launch Edge Browser" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_Edge&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds(CInt(in_Config(&quot;RetryInterval_Edge&quot;).ToString))]">
+    <ui:RetryScope DisplayName="Retry - Launch Edge Browser" sap:VirtualizedContainerService.HintSize="484,822.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_Edge&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds(CInt(in_Config(&quot;RetryInterval_Edge&quot;).ToString))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,645.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -104,10 +104,10 @@
               </ui:OpenBrowser>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="471.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,473.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -147,7 +147,7 @@
     </ui:RetryScope>
     <ui:UiElementExists DisplayName="IE Mode in Edge Browser displayed?" Exists="[blnIEModeDisplayed]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb70c7f8-deb5-4203-816d-8122dd0fe816" InformativeScreenshot="d1ea8eb44af54fd6621482c6a222b3e7" Selector="&lt;wnd app='msedge.exe' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar' role='tool bar' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb70c7f8-deb5-4203-816d-8122dd0fe816" InformativeScreenshot="d1ea8eb44af54fd6621482c6a222b3e7" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='This site isn’t secure - Personal - Microsoft​ Edge' /&gt;&lt;ctrl name='This site isn’t secure - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar: You&amp;apos;re in Internet Explorer mode. Most pages work bette*' role='tool bar' /&gt;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -168,7 +168,7 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b795a73-87c8-42d2-9446-f51bcaab8509" InformativeScreenshot="07088488a64a5eef37b44abd523dcd16" Selector="&lt;wnd app='msedge.exe' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar' role='tool bar' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" WaitForReady="INTERACTIVE">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b795a73-87c8-42d2-9446-f51bcaab8509" InformativeScreenshot="07088488a64a5eef37b44abd523dcd16" Selector="&lt;wnd app='msedge.exe' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar*' role='tool bar' idx='1' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" WaitForReady="INTERACTIVE">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>

@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>822,4205.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,4205.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterTransactionWindowFields_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -400,7 +400,7 @@
                                                                                                       <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
                                                                                                     </scg:Dictionary>
                                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                                  <Sequence DisplayName="EnterReceiptMethod" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                                                                                  <Sequence DisplayName="EnterReceiptMethod" sap:VirtualizedContainerService.HintSize="526,874.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                                                                                     <Sequence.Variables>
                                                                                                       <Variable x:TypeArguments="x:Boolean" Name="blnPaymentMethods" />
                                                                                                     </Sequence.Variables>
@@ -423,10 +423,7 @@
                                                                                                     </ui:TypeInto>
                                                                                                     <ui:UiElementExists DisplayName="PaymentMethodsPanelDisplayed?" Exists="[blnPaymentMethods]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_20">
                                                                                                       <ui:UiElementExists.Target>
-                                                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5540e9b-0410-49f0-b6f5-ca70ce72c9c6" InformativeScreenshot="7cb29f77470692fd7d81218647e4ccd1" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Payment  Methods' role='internal frame' /&gt;">
-                                                                                                          <ui:Target.TimeoutMS>
-                                                                                                            <InArgument x:TypeArguments="x:Int32" />
-                                                                                                          </ui:Target.TimeoutMS>
+                                                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5540e9b-0410-49f0-b6f5-ca70ce72c9c6" InformativeScreenshot="7cb29f77470692fd7d81218647e4ccd1" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Payment  Methods' role='internal frame' /&gt;" TimeoutMS="5">
                                                                                                           <ui:Target.WaitForReady>
                                                                                                             <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                                                           </ui:Target.WaitForReady>
@@ -515,7 +512,7 @@
                                                                                               <av:PointCollection x:Key="ConnectorLocation">480,3620 359.666666666667,3620 359.666666666667,3656.66666666667</av:PointCollection>
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                          <Sequence DisplayName="EnterPaymentTerm" sap:VirtualizedContainerService.HintSize="526,1028.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                                                                          <Sequence DisplayName="EnterPaymentTerm" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                                                                             <Sequence.Variables>
                                                                                               <Variable x:TypeArguments="x:Boolean" Name="blnTerms" />
                                                                                             </Sequence.Variables>

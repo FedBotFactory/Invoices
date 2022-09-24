@@ -3,7 +3,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_MasterRow" Type="InArgument(sd:DataRow)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1150,3748</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,3748</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -199,7 +199,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type 'Source'" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" SimulateType="False" Text="[strSource+ &quot;[k(tab)]&quot;]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type 'Source'" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strSource+ &quot;[k(tab)]&quot;]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="08fb94ba-6c16-4e61-ae6b-9c1bb5bc1511" InformativeScreenshot="c7d9bc51bba375094522cf4ccec2b7d2" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Source RequiredList of Values' role='text' /&gt;">
           <ui:Target.TimeoutMS>
@@ -216,7 +216,7 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ffd0155a-6261-4103-a57a-afcc603c6e59" InformativeScreenshot="0a9c831a7221ca00579436b624673e60" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Batch Sources' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_BatchSourcesPanelDisplayed&quot;).ToString)]" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[blnBatchSourcesPanel]" DisplayName="If Batch Sources Panel Displayed?" sap:VirtualizedContainerService.HintSize="431.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[blnBatchSourcesPanel]" DisplayName="If Batch Sources Panel Displayed?" sap:VirtualizedContainerService.HintSize="484,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

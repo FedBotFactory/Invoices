@@ -21,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,1375.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1382</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -53,6 +53,8 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -85,18 +87,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed." DisplayName="Set Transaction Status" sap:VirtualizedContainerService.HintSize="726.666666666667,1310.66666666667" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+  <Flowchart sap2010:Annotation.AnnotationText="Set and log the transaction's status along with extra log fields. &#xA;There can be three possible statuses: Success, Business Exception and System Exception.&#xA;&#xA;Business Rule Exception characterizes an irregular situation according to the process's rules and prevents the transaction to be processed. The transaction is not retried in this case, since the result will be the same until the problem that causes the exception is solved.&#xA;For example, it can be considered a BusinessRuleException if a process expects to read an email's attachment, but the sender didn't attach any file. In this case, immediate retries of the transaction will not yield a different result.&#xA;&#xA;On the other hand, system exceptions are characterized by exceptions whose types are different than BusinessRuleException. When this kind of exception happens, the transaction item can be retried after closing and reopening the applications involved in the process. The rationale behind this is that the exception was caused by a problem in the applications, which might be solved by restarting them.&#xA;&#xA;If Orchestrator queues are the source of transactions, the Set Transaction Status activity is used to update the status. In addition, the retry mechanism is also implemented by Orchestrator.&#xA;&#xA;If Orchestrator queues are not used, the status can be set, for example, by writing to a specific column in a spreadsheet. In such cases, the retry mechanism is covered by the framework and the number of retries is defined in the configuration file.&#xA;&#xA;At the end, io_TransactionNumber is incremented, which makes the framework get the next transaction to be processed." DisplayName="Set Transaction Status" sap:VirtualizedContainerService.HintSize="712.666666666667,1317.33333333333" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
-        <x:Double x:Key="Width">692.99999999999977</x:Double>
+        <x:Double x:Key="Width">678.66666666666652</x:Double>
         <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,126.4</av:PointCollection>
-        <x:Double x:Key="Height">912.66666666666674</x:Double>
+        <x:Double x:Key="Height">919.33333333333337</x:Double>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
@@ -159,27 +162,13 @@
             </Sequence>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateBotStatus workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                </InArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_Success&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotComments_Success&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_GeneratedTransactionNumber" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_UTI&quot;).ToString" />
-                </InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_Success").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_Config("BotComments_Success").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">[in_GeneratedTransactionNumber]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_UTI").ToString]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
@@ -244,7 +233,7 @@
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">450,724.02</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">550,776.686666666667 550,833.666666666667</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">550,776.686666666667 550,813.666666666667</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[io_dtMainData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;OutputSheetName&quot;).ToString]" WorkbookPath="[in_strOutputFilePath]">
@@ -258,7 +247,7 @@
                     <FlowStep x:Name="__ReferenceID6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">450,833.666666666667</av:Point>
+                          <av:Point x:Key="ShapeLocation">450,813.666666666667</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -297,7 +286,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">330,650.666666666666 330,680.666666666666 210,680.666666666666 210,715.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="376,506" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="200,181.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -333,27 +322,13 @@
                 </Sequence>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateBotStatus workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_BRE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BusinessException.Message" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_UTI&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_BRE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_BusinessException.Message]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_UTI").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">[Nothing]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
@@ -530,27 +505,13 @@
                 </TryCatch>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateBotStatus workflow" sap:VirtualizedContainerService.HintSize="438.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_SE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotComments_SE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_UTI&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_SE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_Config("BotComments_SE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_UTI").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_GeneratedTransactionNumber">[Nothing]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>

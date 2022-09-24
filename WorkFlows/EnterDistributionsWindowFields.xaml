@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="EnterDistributionsWindowFields" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="EnterDistributionsWindowFields" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_dtLines" Type="InArgument(sd:DataTable)" />
@@ -6,7 +6,7 @@
   <this:EnterDistributionsWindowFields.in_dtLines>
     <InArgument x:TypeArguments="sd:DataTable" />
   </this:EnterDistributionsWindowFields.in_dtLines>
-  <sap:VirtualizedContainerService.HintSize>1056,4711.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,4608.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -79,7 +79,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Enter Distributions" sap:VirtualizedContainerService.HintSize="1066,4646.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="Enter Distributions" sap:VirtualizedContainerService.HintSize="1066,4544" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intDistributionsIndex" />
       <Variable x:TypeArguments="x:String" Name="strDistributionsIdx" />
@@ -125,13 +125,13 @@
         <InArgument x:TypeArguments="x:Int32">1</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1024,2820.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtLines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1024,2718" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="990,2702" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence sap:VirtualizedContainerService.HintSize="990,2599.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strGLAccount" />
               <Variable x:TypeArguments="x:String" Name="strPercent" />
@@ -232,9 +232,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[intDistributionsIndex &lt; 1]" DisplayName="If Distributions &lt; 1" sap:VirtualizedContainerService.HintSize="948,1790" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[intDistributionsIndex &lt; 1]" DisplayName="If Distributions &lt; 1" sap:VirtualizedContainerService.HintSize="948,1687.33333333333" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,842" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,739.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -271,29 +271,40 @@
                   </ui:CommentOut>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnterGLAccount workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\EnterGLAccount.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_strDistributionsIdx">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDistributionsIdx" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Row">
-                        <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="LineRow" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strDistributionsIdx">[strDistributionsIdx]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Row">[LineRow]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Press tab key - Single Line GL Account " sap:VirtualizedContainerService.HintSize="334,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="tab" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
-                    <ui:SendHotkey.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f42f2d97-9d9c-49c0-9a39-780aae1f7cba" InformativeScreenshot="5b95de776b96a86cd934fb7e8dd7c65d" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='GL Account RequiredList of Values' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:SendHotkey.Target>
-                  </ui:SendHotkey>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,247.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Press tab key - Single Line GL Account " sap:VirtualizedContainerService.HintSize="334,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="tab" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f42f2d97-9d9c-49c0-9a39-780aae1f7cba" InformativeScreenshot="5b95de776b96a86cd934fb7e8dd7c65d" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='GL Account RequiredList of Values' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
                   <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Single LIne '%'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" SimulateType="True" Text="[strPercent]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfc4f359-41cb-477f-9198-46df5f138710" InformativeScreenshot="c19e5a0d0bad0caf26759c1c33833eac" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='% Required' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
@@ -321,7 +332,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="526,1626" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="526,1523.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -358,29 +369,40 @@
                   </ui:CommentOut>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnterGLAccount workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WorkFlows\EnterGLAccount.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_strDistributionsIdx">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDistributionsIdx" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Row">
-                        <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="LineRow" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strDistributionsIdx">[strDistributionsIdx]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_Row">[LineRow]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Press tab key - Multiple Line GL Account " sap:VirtualizedContainerService.HintSize="484,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="tab" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
-                    <ui:SendHotkey.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f42f2d97-9d9c-49c0-9a39-780aae1f7cba" InformativeScreenshot="5b95de776b96a86cd934fb7e8dd7c65d" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='GL Account RequiredList of Values' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:SendHotkey.Target>
-                  </ui:SendHotkey>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,247.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Press tab key - Multiple Line GL Account " sap:VirtualizedContainerService.HintSize="334,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="tab" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f42f2d97-9d9c-49c0-9a39-780aae1f7cba" InformativeScreenshot="5b95de776b96a86cd934fb7e8dd7c65d" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='GL Account RequiredList of Values' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
                   <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Multiple LIne '%'" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" SimulateType="True" Text="[strPercent]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfc4f359-41cb-477f-9198-46df5f138710" InformativeScreenshot="c19e5a0d0bad0caf26759c1c33833eac" Selector="[String.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Distributions (HQ Department Of Labor)' role='internal frame' /&gt;&lt;java name='% Required' role='text' idx='{0}' /&gt;&quot;, strDistributionsIdx)]">
