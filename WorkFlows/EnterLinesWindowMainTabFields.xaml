@@ -5,7 +5,7 @@
     <x:Property Name="in_dtMain" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_dtBatch" Type="InArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>965.333333333333,4164.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>779.333333333333,4434</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -75,9 +75,10 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Enter Lines Window Main Tab Fields" DisplayName="EnterLinesWindowMainTabFields" sap:VirtualizedContainerService.HintSize="594,4100" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Enter Lines Window Main Tab Fields" DisplayName="EnterLinesWindowMainTabFields" sap:VirtualizedContainerService.HintSize="594,4369.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strIdx" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtUniqueLines" />
@@ -90,6 +91,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log - LinesWindowEntry" sap:VirtualizedContainerService.HintSize="552,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_Config(&quot;LogLinesWindowEntryStart&quot;).ToString]" />
     <ui:FilterDataTable DataTable="[in_dtBatch]" DisplayName="Filter TransLines Rows" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="552,162.666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtTransLines]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -125,7 +127,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,3508" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Enter Lines " sap:VirtualizedContainerService.HintSize="552,3508" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="IntIndex" />
       </Sequence.Variables>
@@ -494,5 +496,6 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
+    <ui:LogMessage DisplayName="Log - LInesWindowEntry Success" sap:VirtualizedContainerService.HintSize="552,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_Config(&quot;LogLinesWindowEntrySuccess&quot;).ToString]" />
   </Sequence>
 </Activity>
