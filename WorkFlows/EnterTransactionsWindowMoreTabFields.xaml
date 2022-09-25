@@ -74,6 +74,7 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="EnterTransactionsWindowMoreTabFields" sap:VirtualizedContainerService.HintSize="802.666666666667,1496.66666666667" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -103,10 +104,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID16</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID13" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-      <FlowDecision.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strSalesperson)" />
-      </FlowDecision.Condition>
+    <FlowDecision x:Name="__ReferenceID13" Condition="[String.IsNullOrEmpty(strSalesperson)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -117,24 +115,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-          <FlowDecision.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strDefaultTax)" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID5" Condition="[String.IsNullOrEmpty(strDefaultTax)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">260.666666666667,516.666666666667</av:Point>
               <av:Size x:Key="ShapeSize">78.6666666666667,86.6666666666667</av:Size>
-              <av:PointCollection x:Key="FalseConnector">339.333333333333,560 460,560</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">339.333333333334,560 460,560</av:PointCollection>
               <av:PointCollection x:Key="TrueConnector">260.666666666667,560 217,560 217,625.373333333333 280.333333333333,625.373333333333 280.333333333333,656.666666666667</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowDecision x:Name="__ReferenceID4" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-              <FlowDecision.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strAgreement)" />
-              </FlowDecision.Condition>
+            <FlowDecision x:Name="__ReferenceID4" Condition="[String.IsNullOrEmpty(strAgreement)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,10 +137,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <FlowDecision.True>
-                <FlowDecision x:Name="__ReferenceID3" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strCrossReference)" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID3" Condition="[String.IsNullOrEmpty(strCrossReference)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,10 +148,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowDecision x:Name="__ReferenceID2" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strSpecialInstructions)" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID2" Condition="[String.IsNullOrEmpty(strSpecialInstructions)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,10 +159,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowDecision x:Name="__ReferenceID1" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
-                          <FlowDecision.Condition>
-                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strPurchaseOrderNumber)" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID1" Condition="[String.IsNullOrEmpty(strPurchaseOrderNumber)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,10 +170,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowDecision x:Name="__ReferenceID0" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                              <FlowDecision.Condition>
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strRemitToAddress)" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID0" Condition="[String.IsNullOrEmpty(strRemitToAddress)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,7 +187,7 @@
                                       <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Enter Remit To Address Field" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <Sequence DisplayName="Enter Remit To Address Field" sap:VirtualizedContainerService.HintSize="526,1304.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="blnRemitToAddresses" />
                                     </Sequence.Variables>
@@ -230,16 +210,16 @@
                                     </ui:TypeInto>
                                     <ui:UiElementExists DisplayName="Remit To Addresses Displayed?" Exists="[blnRemitToAddresses]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
                                       <ui:UiElementExists.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40edc006-d0d4-4201-bcd3-ffccc23c2192" InformativeScreenshot="8574fb0429c9a62d170347f0f2bd299f" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Remit To Addresses' role='internal frame' /&gt;" TimeoutMS="5">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40edc006-d0d4-4201-bcd3-ffccc23c2192" InformativeScreenshot="8574fb0429c9a62d170347f0f2bd299f" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Remit To Addresses' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_RemitToAddressesPanelDisplayed&quot;).ToString)]">
                                           <ui:Target.WaitForReady>
                                             <InArgument x:TypeArguments="ui:WaitForReady" />
                                           </ui:Target.WaitForReady>
                                         </ui:Target>
                                       </ui:UiElementExists.Target>
                                     </ui:UiElementExists>
-                                    <If Condition="[blnRemitToAddresses]" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_7">
+                                    <If Condition="[blnRemitToAddresses]" DisplayName="If Remit To Addresses Panel Displayed?" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_7">
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                        <Sequence DisplayName="Close Remit To Addresses Panel" sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -333,7 +313,7 @@
                                               </ui:Target>
                                             </ui:Click.Target>
                                           </ui:Click>
-                                          <Throw Exception="[New BusinessRuleException]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                          <Throw DisplayName="Remit To Addresses Field Error" Exception="[New BusinessRuleException (in_Config(&quot;BRE_RemitToAddressesFieldError&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
@@ -489,16 +469,17 @@
                         </ui:TypeInto>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InvalidValueError workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="WorkFlows\InvalidValueError.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_BREInvalidValue">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BRE_CrossReferenceFieldError&quot;).ToString" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <ui:UiElementExists DisplayName="Transactions Displayed?" Exists="[blnTransactions]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e4ae5577-5670-4ecc-88e0-2bac112ab2a8" InformativeScreenshot="6af3e537ef64880a0d39f154bf185055" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Transactions' role='internal frame' /&gt;" TimeoutMS="5">
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e4ae5577-5670-4ecc-88e0-2bac112ab2a8" InformativeScreenshot="6af3e537ef64880a0d39f154bf185055" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Transactions' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_TransactionsPanelDisplayed&quot;).ToString)]" WaitForReady="INTERACTIVE" />
                           </ui:UiElementExists.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -507,9 +488,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:UiElementExists>
-                        <If Condition="[blnTransactions]" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_6">
+                        <If Condition="[blnTransactions]" DisplayName="If Transactions Panel Displayed?" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_6">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence DisplayName="Close Transactions Panel" sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -603,7 +584,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <Throw Exception="[New BusinessRuleException]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                              <Throw DisplayName="Cross Reference Field Error" Exception="[New BusinessRuleException (in_Config(&quot;BRE_CrossReferenceFieldError&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -653,7 +634,12 @@
                     </ui:TypeInto>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InvalidValueError workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WorkFlows\InvalidValueError.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_BREInvalidValue">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BRE_AggrementFieldError&quot;).ToString" />
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -670,7 +656,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">460,525.333333333333</av:Point>
                   <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">560,594.666666666667 560,624.666666666667 319.666666666667,624.666666666667 319.666666666667,656.666666666667</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">560,594.666666666666 560,624.666666666666 319.666666666667,624.666666666666 319.666666666667,656.666666666667</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Enter Default Tax Field" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -696,16 +682,12 @@
                 </ui:TypeInto>
                 <ui:UiElementExists DisplayName="Default Tax Displayed?" Exists="[blnDefaultTax]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                   <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5682fce7-02de-4afb-9498-8c08131cd42b" InformativeScreenshot="8e1cd301a55ce6096f4a9d609a3e946b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Default Tax' role='internal frame' /&gt;" TimeoutMS="5">
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5682fce7-02de-4afb-9498-8c08131cd42b" InformativeScreenshot="8e1cd301a55ce6096f4a9d609a3e946b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Default Tax' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_DefaultTaxPanelDisplayed&quot;).ToString)]" WaitForReady="INTERACTIVE" />
                   </ui:UiElementExists.Target>
                 </ui:UiElementExists>
-                <If Condition="[blnDefaultTax]" sap:VirtualizedContainerService.HintSize="484,1330.66666666667" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[blnDefaultTax]" DisplayName="If Default Tax Panel Displayed?" sap:VirtualizedContainerService.HintSize="484,1330.66666666667" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,1136" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence DisplayName="Close Default Tax Panel" sap:VirtualizedContainerService.HintSize="376,1136" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -865,7 +847,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <Throw Exception="[New BusinessRuleException]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      <Throw DisplayName="Default Tax Panel Error" Exception="[New BusinessRuleException (in_Config(&quot;BRE_DefaultTaxPanelFieldError&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
@@ -918,21 +900,26 @@
             </ui:TypeInto>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InvalidValueError workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\InvalidValueError.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BREInvalidValue">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BRE_SalesPersonFieldError&quot;).ToString" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:UiElementExists DisplayName="Sales Representatives Panel Displayed?" Exists="[blnSalesRepresentatives]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64c1ae8a-aae3-4832-9064-f85a11d6d3c7" InformativeScreenshot="dd5849d4b9dfc40b5b7bacc6529d71a2" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Sales Representatives' role='internal frame' /&gt;" TimeoutMS="5">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64c1ae8a-aae3-4832-9064-f85a11d6d3c7" InformativeScreenshot="dd5849d4b9dfc40b5b7bacc6529d71a2" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Sales Representatives' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_SalelsRepresentativePanelDisplayed&quot;).ToString)]">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[blnSalesRepresentatives]" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[blnSalesRepresentatives]" DisplayName="If Sales Representative Panel Displayed?" sap:VirtualizedContainerService.HintSize="484,892.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Close SalesRepresentative Panel" sap:VirtualizedContainerService.HintSize="376,698" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1026,7 +1013,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <Throw Exception="[new BusinessRuleException]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw DisplayName="Sales Person Field Error" Exception="[New BusinessRuleException (in_Config(&quot;BRE_SalesPersonFieldError&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -1059,10 +1046,7 @@
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
-    <FlowDecision x:Name="__ReferenceID15" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
-      <FlowDecision.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="String.IsNullOrEmpty(strTerritory)" />
-      </FlowDecision.Condition>
+    <FlowDecision x:Name="__ReferenceID15" Condition="[String.IsNullOrEmpty(strTerritory)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_8" True="{x:Reference __ReferenceID13}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1072,9 +1056,6 @@
           <av:PointCollection x:Key="TrueConnector">260.666666666667,260 212.333333333333,260 212.333333333333,353.373333333333 280.333333333333,353.373333333333 280.333333333333,386.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <FlowDecision.True>
-        <x:Reference>__ReferenceID13</x:Reference>
-      </FlowDecision.True>
       <FlowDecision.False>
         <FlowStep x:Name="__ReferenceID14">
           <sap:WorkflowViewStateService.ViewState>
@@ -1108,14 +1089,10 @@
             </ui:TypeInto>
             <ui:UiElementExists DisplayName="Note Displayed?" Exists="[blnTerritoryNote]" sap:VirtualizedContainerService.HintSize="562.666666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d74ec5b2-5cec-409c-a030-930a7dc97c5f" InformativeScreenshot="29be4c5269e38f43be5fed4abf15446b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Note The maximum value size for segment Area is 4. Truncating value *' role='internal frame' /&gt;" TimeoutMS="5">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d74ec5b2-5cec-409c-a030-930a7dc97c5f" InformativeScreenshot="29be4c5269e38f43be5fed4abf15446b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Note The maximum value size for segment Area is 4. Truncating value *' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_NotePanelDisplayed&quot;).ToString)]" WaitForReady="INTERACTIVE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[blnTerritoryNote]" sap:VirtualizedContainerService.HintSize="562.666666666667,300.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[blnTerritoryNote]" DisplayName="If Territory Note Panel displayed?" sap:VirtualizedContainerService.HintSize="562.666666666667,300.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                   <ui:Click.CursorPosition>
@@ -1152,16 +1129,12 @@
             </If>
             <ui:UiElementExists DisplayName="Customer Territory Flexfield Displayed?" Exists="[blnCustomerTerritory]" sap:VirtualizedContainerService.HintSize="562.666666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bc111533-9caa-439f-b723-2f1dac25a285" InformativeScreenshot="9632d9120465dfffc5f8d637e777ede2" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Customer Territory Flexfield' role='internal frame' /&gt;" TimeoutMS="5">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bc111533-9caa-439f-b723-2f1dac25a285" InformativeScreenshot="9632d9120465dfffc5f8d637e777ede2" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Customer Territory Flexfield' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_CustomerTerritoryFlexFieldDisplayed&quot;).ToString)]" WaitForReady="INTERACTIVE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[blnCustomerTerritory]" sap:VirtualizedContainerService.HintSize="562.666666666667,1963.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[blnCustomerTerritory]" DisplayName="If Customer Territory Flexfiled displayed?" sap:VirtualizedContainerService.HintSize="562.666666666667,1963.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="526,1768.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Close Customer Territory Flexfield" sap:VirtualizedContainerService.HintSize="526,1768.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1235,14 +1208,14 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Note Displayed?" Exists="[blnTerritoryNote]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d74ec5b2-5cec-409c-a030-930a7dc97c5f" InformativeScreenshot="29be4c5269e38f43be5fed4abf15446b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Note The maximum value size for segment Area is 4. Truncating value *' role='internal frame' /&gt;" TimeoutMS="5">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d74ec5b2-5cec-409c-a030-930a7dc97c5f" InformativeScreenshot="29be4c5269e38f43be5fed4abf15446b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Transactions (HQ Department Of Labor : USD)' role='internal frame' /&gt;&lt;java name='Note The maximum value size for segment Area is 4. Truncating value *' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_NotePanelDisplayed&quot;).ToString)]">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[blnTerritoryNote]" sap:VirtualizedContainerService.HintSize="484,300.666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[blnTerritoryNote]" DisplayName="If note displayed again?" sap:VirtualizedContainerService.HintSize="484,300.666666666667" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
                       <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                         <ui:Click.CursorPosition>
@@ -1387,7 +1360,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <Throw Exception="[new BusinessRuleException]" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw DisplayName="Territory field Error" Exception="[New BusinessRuleException (in_Config(&quot;BRE_TerritoryFieldError&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </If.Then>
               <If.Else>

@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,824</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,824</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LoginPage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -70,7 +70,6 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="1. Prompt to Enter Login Credentials&#xA;2. Invalid Credentials Entry - Retry Login" DisplayName="LoginPage" sap:VirtualizedContainerService.HintSize="944,759.333333333333" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -84,11 +83,11 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">370,2.66666666666666</av:Point>
+        <av:Point x:Key="ShapeLocation">410,2.66666666666666</av:Point>
         <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
         <x:Double x:Key="Width">910</x:Double>
         <x:Double x:Key="Height">678.33333333333326</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">400,77.3333333333333 400,109</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">440,77.3333333333333 440,109</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -98,9 +97,9 @@
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">300,109</av:Point>
+          <av:Point x:Key="ShapeLocation">340,109</av:Point>
           <av:Size x:Key="ShapeSize">200,22</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">400,131 400,161 403.666666666667,161 403.666666666667,176.666666666667</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">440,131 440,161 403.666666666667,161 403.666666666667,176.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <p:RequestCredential Password="{x:Null}" DisplayName=" Request Login Credentials" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RequestCredential_1" Message="[in_Config(&quot;Cred_Message&quot;).ToString]" PasswordSecureString="[secstrPwd]" Result="[blnPromptClose]" Title="[in_Config(&quot;Cred_Title&quot;).ToString]" Username="[strUserName]" />
@@ -111,7 +110,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">340.666666666667,176.666666666667</av:Point>
               <av:Size x:Key="ShapeSize">126,86.6666666666667</av:Size>
-              <av:PointCollection x:Key="TrueConnector">340.666666666667,220 220,220</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">340.666666666667,220 230,220</av:PointCollection>
               <av:PointCollection x:Key="FalseConnector">466.666666666667,220 580,220</av:PointCollection>
               <x:String x:Key="TrueLabel">NotClosed</x:String>
               <x:String x:Key="FalseLabel">Closed</x:String>
@@ -121,12 +120,12 @@
             <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">20,185.333333333333</av:Point>
+                  <av:Point x:Key="ShapeLocation">30,185.333333333333</av:Point>
                   <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">120,254.666666666666 120,284.666666666666 107,284.666666666666 107,306.666666666667</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">130,254.666666666666 130,284.666666666666 107,284.666666666666 107,306.666666666667</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Enter Login Credentials" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence DisplayName="Enter Login Credentials" sap:VirtualizedContainerService.HintSize="476,924" sap2010:WorkflowViewState.IdRef="Sequence_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -302,7 +301,7 @@
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">710,513.666666666667</av:Point>
                                   <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">810,513.666666666667 810,120 500,120</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">810,513.666666666667 810,120 540,120</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="[in_Config(&quot;MsgBox_InvalidCred_Caption&quot;).ToString]" DisplayName="Re-enter Login Credentials" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[in_Config(&quot;MsgBox_InvalidCred&quot;).ToString]" />

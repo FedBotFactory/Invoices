@@ -71,13 +71,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="1. Handles all security warnings dynamically.&#xA;2. Loop will be exited when Oracle Workbench appears.&#xA;3. Closes Invoice Workbench after appearing." DisplayName="HandleSecurityWarnings" sap:VirtualizedContainerService.HintSize="1501.33333333333,1857.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="blnExitLoop" />
-      <Variable x:TypeArguments="x:Boolean" Name="blnInvoiceWorkbenchLoaded" />
       <Variable x:TypeArguments="ui:UiElement" Name="TransactionsDisplayed" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -228,9 +226,9 @@
         </ui:Target>
       </ui:WaitUiElementAppear.Target>
     </ui:WaitUiElementAppear>
-    <If Condition="[IsNothing(TransactionsDisplayed)]" DisplayName="if Treasury Confirmation not displayed" sap:VirtualizedContainerService.HintSize="1459.33333333333,254.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[IsNothing(TransactionsDisplayed)]" DisplayName="If Transaction window Not displayed" sap:VirtualizedContainerService.HintSize="1459.33333333333,254.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Throw DisplayName="Treasury Confrmation not displayed" Exception="[New SystemException(in_Config(&quot;SE_ErrMsg_TransactionsWindowNotDisplayed&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+        <Throw DisplayName="Transactions Window Not Displayed" Exception="[New SystemException(in_Config(&quot;SE_ErrMsg_TransactionsWindowNotDisplayed&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
       </If.Then>
     </If>
     <ui:LogMessage DisplayName="Log Handle Security Warnings - Success" sap:VirtualizedContainerService.HintSize="1459.33333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[in_Config(&quot;Log_HandleSecurityWarnings_Success&quot;).ToString]" />

@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,897.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>965.333333333333,928</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterLinesWindowTaxExemptionTabFields_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -70,9 +70,10 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnterLinesWindowTaxExemptionTabFields" sap:VirtualizedContainerService.HintSize="526,832.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Enter Lines Window Tax Exemption Tab Fields if available" DisplayName="EnterLinesWindowTaxExemptionTabFields" sap:VirtualizedContainerService.HintSize="526,863.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTaxHandling" />
       <Variable x:TypeArguments="x:String" Name="strTaxExemptionEndDate" />
@@ -80,11 +81,12 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[Not String.IsNullOrWhiteSpace(strTaxHandling)]" DisplayName="If Tax Exemption Fields available?" sap:VirtualizedContainerService.HintSize="484,740.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not String.IsNullOrEmpty(strTaxHandling)]" DisplayName="If Tax Exemption Fields available?" sap:VirtualizedContainerService.HintSize="484,740.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,546" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Enter Tax Exemption Fields" sap:VirtualizedContainerService.HintSize="376,546" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

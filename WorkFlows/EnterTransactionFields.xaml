@@ -3,7 +3,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_MasterRow" Type="InArgument(sd:DataRow)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,3748</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,3882.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -71,9 +71,8 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Enter Transaction Fields in Transactions Window" DisplayName="EnterTransactionFields" sap:VirtualizedContainerService.HintSize="526,3683.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText=" Enter Transaction Fields into Transactions Window" DisplayName="EnterTransactionFields" sap:VirtualizedContainerService.HintSize="526,3818" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strShipToName" />
       <Variable x:TypeArguments="x:String" Name="strSource" />
       <Variable x:TypeArguments="x:String" Name="strClass" />
       <Variable x:TypeArguments="x:String" Name="strType" />
@@ -82,28 +81,9 @@
       <Variable x:TypeArguments="x:String" Name="strDate" />
       <Variable x:TypeArguments="x:String" Name="strGLDate" />
       <Variable x:TypeArguments="x:String" Name="strCurrency" />
-      <Variable x:TypeArguments="x:String" Name="strBillToName" />
-      <Variable x:TypeArguments="x:String" Name="strBillToNumber" />
-      <Variable x:TypeArguments="x:String" Name="strBillToLocation" />
-      <Variable x:TypeArguments="x:String" Name="strBillToAddressField1" />
-      <Variable x:TypeArguments="x:String" Name="strBillToAddressField2" />
-      <Variable x:TypeArguments="x:String" Name="strBillToAddressField3" />
-      <Variable x:TypeArguments="x:String" Name="strBillToContact" />
-      <Variable x:TypeArguments="x:String" Name="strCommitment" />
-      <Variable x:TypeArguments="x:String" Name="strPaymentTerm" />
-      <Variable x:TypeArguments="x:String" Name="strInvoicingRule" />
-      <Variable x:TypeArguments="x:String" Name="strSoldToName" />
-      <Variable x:TypeArguments="x:String" Name="strSoldToNumber" />
-      <Variable x:TypeArguments="x:String" Name="strPayingCustomerName" />
-      <Variable x:TypeArguments="x:String" Name="strPayingCustomerNumber" />
-      <Variable x:TypeArguments="x:String" Name="strPayingCustomerLocation" />
-      <Variable x:TypeArguments="x:String" Name="strReceiptMethod" />
-      <Variable x:TypeArguments="x:String" Name="strTerritory" />
       <Variable x:TypeArguments="x:Boolean" Name="blnBatchSourcesPanel" />
       <Variable x:TypeArguments="x:Boolean" Name="blnTransactionTypePanel" />
       <Variable x:TypeArguments="x:Boolean" Name="blnLegalEntityPanel" />
-      <Variable x:TypeArguments="x:Boolean" Name="blnCustomersPanel" />
-      <Variable x:TypeArguments="x:String" Name="strShipToNumber" />
       <Variable x:TypeArguments="x:String" Name="strMasterRowDate" />
       <Variable x:TypeArguments="x:String" Name="strMasterRowGLDate" />
     </Sequence.Variables>
@@ -113,6 +93,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log - Transaction Window Fields Entry" sap:VirtualizedContainerService.HintSize="484,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_Config(&quot;Log_TransactionWindowFieldsEntry&quot;).ToString]" />
     <ui:MultipleAssign DisplayName="Assign Transaction Fields Variables" sap:VirtualizedContainerService.HintSize="484,375.333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">

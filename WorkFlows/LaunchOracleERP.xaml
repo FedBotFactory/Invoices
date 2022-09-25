@@ -68,6 +68,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="1. Launch Edge Browser&#xA;2. Retry Launch Browser upon Launch Failure&#xA;" DisplayName="Launch OracleERP " sap:VirtualizedContainerService.HintSize="526,1732.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -121,7 +122,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log - Launch Failure" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_Config(&quot;Log_LaunchBrowser&quot;).ToString]" />
+                    <ui:LogMessage DisplayName="Log - Launch Failure" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_Config(&quot;Log_LaunchBrowserFail&quot;).ToString]" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseEdge workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\CloseEdge.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -147,16 +148,12 @@
     </ui:RetryScope>
     <ui:UiElementExists DisplayName="IE Mode in Edge Browser displayed?" Exists="[blnIEModeDisplayed]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb70c7f8-deb5-4203-816d-8122dd0fe816" InformativeScreenshot="d1ea8eb44af54fd6621482c6a222b3e7" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='This site isn’t secure - Personal - Microsoft​ Edge' /&gt;&lt;ctrl name='This site isn’t secure - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar: You&amp;apos;re in Internet Explorer mode. Most pages work bette*' role='tool bar' /&gt;" WaitForReady="INTERACTIVE">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-        </ui:Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb70c7f8-deb5-4203-816d-8122dd0fe816" InformativeScreenshot="d1ea8eb44af54fd6621482c6a222b3e7" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='This site isn’t secure and 1 more page - Personal - Microsoft​ E*' /&gt;&lt;ctrl name='This site isn’t secure - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Infobar Container' role='grouping' /&gt;&lt;ctrl name='Infobar: You&amp;apos;re in Internet Explorer mode. Most pages work bette*' role='tool bar' /&gt;&lt;ctrl name='Learn more' role='link' /&gt;&lt;nav up='1' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" TimeoutMS="100" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
     <If Condition="[blnIEModeDisplayed]" DisplayName="If IE Mode in Edge Browser is displayed" sap:VirtualizedContainerService.HintSize="484,300.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="ContinueOnError set to true" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Close" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="ContinueOnError set to true" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Close Microsoft Edge Pop up" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
